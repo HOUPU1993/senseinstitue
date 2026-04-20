@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insights | SENSE Institute</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pocketbase@0.21.1/dist/pocketbase.umd.js"></script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #606d77; font-family: 'Inter', sans-serif; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .anim-fade-up {
+            opacity: 0;
+            animation: fadeInUp 0.9s ease forwards;
+        }
+        .delay-1 { animation-delay: 0.15s; }
+        .delay-2 { animation-delay: 0.35s; }
+        .delay-3 { animation-delay: 0.55s; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+
+    <nav class="fixed w-full z-50 transition-all duration-300 py-5 bg-white text-gray-900 shadow-sm" id="navbar">
+        <div class="relative flex items-center px-8">
+            <a href="index.html" class="absolute left-8 flex items-center gap-2">
+                <img id="nav-logo-img" class="h-10 w-auto hidden" alt="SENSE Institute">
+                <span id="nav-logo-text" class="text-base font-semibold tracking-widest uppercase">SENSE INSTITUTE</span>
+            </a>
+            <div class="flex-1 flex justify-center">
+                <div class="hidden md:flex space-x-10 text-xs font-medium tracking-widest uppercase">
+                    <a href="index.html" class="hover:opacity-60 transition">Home</a>
+                    <a href="about.html" class="hover:opacity-60 transition">About</a>
+                    <a href="labs.html" class="hover:opacity-60 transition">Labs</a>
+                    <a href="insights.html" class="hover:opacity-60 transition border-b border-current pb-0.5">Insights</a>
+                    <a href="programs.html" class="hover:opacity-60 transition">Programs</a>
+                    <a href="contact.html" class="hover:opacity-60 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    
+    <section class="relative h-screen flex items-center justify-center text-center text-white overflow-hidden">
+        <img id="hero-bg-img" class="absolute top-0 left-0 w-full h-full object-cover -z-20"
+             style="opacity: 0; transition: opacity 1.4s ease-in;" alt="">
+        <div class="absolute top-0 left-0 w-full h-full bg-black/35 -z-10"></div>
+        <div class="px-4 relative z-10 max-w-4xl mx-auto">
+            <h1 class="anim-fade-up delay-1 text-6xl md:text-7xl font-bold mb-6 leading-tight">Our Insights</h1>
+            <p class="anim-fade-up delay-2 text-lg md:text-xl font-light leading-relaxed" style="color: #eff4ff;">
+                We translate public perception, emerging trends, and AI-enabled inquiry into original insights on social and environmental challenges.<br>
+                Our perspectives are grounded in observation, data, and a commitment to making complex issues more accessible.
+            </p>
+        </div>
+    </section>
+
+    
+    <main class="max-w-5xl mx-auto py-20 px-8 md:px-12 flex flex-col gap-24">
+
+        
+        <article class="reveal flex flex-col gap-6">
+            <div>
+                <h2 class="text-3xl font-bold mb-1" style="color: #1b4f6a;">How Do LLMs Shape Your Everyday Life?</h2>
+                <p class="font-semibold italic" style="color: #1b4f6a;">A 10-year longitudinal survey tracking the impact of AI on everyday life</p>
+            </div>
+            <p class="text-sm" style="color: #2d4a5a;">Survey Contributors: Yuetong Wang (Lead Researcher), XXX, XXX</p>
+            <a href="#" class="inline-block self-start px-5 py-2 rounded text-sm font-medium text-white transition hover:opacity-80" style="background-color: #164056;">
+                Join the Survey
+            </a>
+            <p class="leading-relaxed" style="color: #2d4a5a;">
+                We launched this survey to understand how emerging AI technologies—particularly large language models—are shaping everyday life across diverse communities worldwide. As an ongoing initiative, we aim to track these changes over the next decade, building a longitudinal dataset to uncover how AI applications influence human behavior, perception, and decision-making.
+            </p>
+            
+            <div class="w-full rounded-xl overflow-hidden shadow-xl" style="height: 900px;">
+                <iframe src="survey/llm-2026.html" width="100%" height="100%" style="border: none; display: block;"></iframe>
+            </div>
+        </article>
+
+        
+        <article class="reveal flex flex-col gap-6">
+            <div>
+                <h2 class="text-3xl font-bold mb-1" style="color: #1b4f6a;">Do You Really Know What's in Your Food?</h2>
+                <p class="font-semibold italic" style="color: #1b4f6a;">A survey exploring how people understand packaged foods, ingredients, and their impacts on health</p>
+            </div>
+            <p class="text-sm" style="color: #2d4a5a;">Survey Contributors: Zhiyan Chen (Lead Researcher), XXX, XXX</p>
+            <a href="#" class="inline-block self-start px-5 py-2 rounded text-sm font-medium text-white transition hover:opacity-80" style="background-color: #164056;">
+                Join the Survey
+            </a>
+            <p class="leading-relaxed" style="color: #2d4a5a;">
+                We launched this survey to understand how people perceive the health impacts of packaged foods and their ingredients. While ingredient labels are widely available, they are often difficult to interpret—creating a gap between information access and meaningful understanding. By examining how people read, interpret, and trust food labels, we aim to uncover how accessible and actionable this information truly is, and to support more informed and healthier choices.
+            </p>
+            
+            <div class="w-full rounded-xl overflow-hidden shadow-xl" style="height: 900px;">
+                <iframe src="survey/food-additive-2026.html" width="100%" height="100%" style="border: none; display: block;"></iframe>
+            </div>
+        </article>
+
+    </main>
+
+    
+    <footer style="background-color: #164056; border-top: 1px solid rgba(255,255,255,0.08);">
+        <div class="max-w-6xl mx-auto px-8 py-10 flex flex-col md:flex-row items-center md:items-start gap-8">
+            <div class="flex items-center gap-4 md:w-64 shrink-0">
+                <img id="footer-logo-img" class="h-12 w-auto hidden" alt="SENSE Institute">
+                <div>
+                    <p class="font-bold text-sm tracking-wide" style="color: #fdf6ee;">SENSE Institute</p>
+                    <p class="text-xs mt-0.5 leading-snug" style="color: #fdf6ee; opacity: 0.7;">Systems for Environment &amp;<br>Societal Intelligence Institute</p>
+                </div>
+            </div>
+            <div class="flex-1 flex justify-center">
+                <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs tracking-widest uppercase" style="color: #eff4ff;">
+                    <a href="index.html" class="hover:opacity-60 transition">Home</a>
+                    <a href="about.html" class="hover:opacity-60 transition">About</a>
+                    <a href="labs.html" class="hover:opacity-60 transition">Labs</a>
+                    <a href="insights.html" class="hover:opacity-60 transition">Insights</a>
+                    <a href="programs.html" class="hover:opacity-60 transition">Programs</a>
+                    <a href="contact.html" class="hover:opacity-60 transition">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="border-t text-center py-4 text-xs" style="border-color: rgba(255,255,255,0.08); color: #fdf6ee; opacity: 0.6;">
+            &copy; 2026 SENSE Institute. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const pb = new PocketBase('https://senseinstitute.org');
+
+        async function loadAssets() {
+            try {
+                const records = await pb.collection('assets').getFullList({ sort: '-created' });
+                const logoRecord = records.find(r => r.name && r.name.toLowerCase().includes('logo'));
+                if (logoRecord?.media) {
+                    const logoUrl = pb.files.getUrl(logoRecord, logoRecord.media);
+                    const img = document.getElementById('nav-logo-img');
+                    img.src = logoUrl;
+                    img.classList.remove('hidden');
+                    document.getElementById('nav-logo-text').classList.add('hidden');
+                    const footerImg = document.getElementById('footer-logo-img');
+                    if (footerImg) { footerImg.src = logoUrl; footerImg.classList.remove('hidden'); }
+                }
+                const heroRecord = records.find(r => r.name && (r.name.toLowerCase().includes('hero') || r.name.toLowerCase().includes('home')));
+                if (heroRecord?.media) {
+                    const bgImg = document.getElementById('hero-bg-img');
+                    bgImg.src = pb.files.getUrl(heroRecord, heroRecord.media);
+                    bgImg.onload = () => { bgImg.style.opacity = 1; };
+                }
+            } catch(e) { console.error('Assets load error', e); }
+        }
+
+        function initReveal() {
+            const els = document.querySelectorAll('.reveal:not(.revealed)');
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add('revealed'), i * 80);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            els.forEach(el => obs.observe(el));
+        }
+
+        loadAssets();
+        document.addEventListener('DOMContentLoaded', () => setTimeout(initReveal, 100));
+    </script>
+</body>
+</html>
